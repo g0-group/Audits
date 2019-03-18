@@ -1,6 +1,7 @@
 # Audit report
 ## DX-MGN-POOL
 Repository: https://github.com/gnosis/dx-mgn-pool
+
 Commit: 0dfe8c6df94600e5d0404547532e80e8f54262fa
 
 ## Files
