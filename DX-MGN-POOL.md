@@ -27,7 +27,10 @@ The arbitrage opportunity could be addressed by implementing a deposit queue so 
 
 #### response
 
-We definitively see the attack vector and you guys are right, a good solution would be the deposit-queue. Also, it should not be difficult to implement. However, this was more a quick - 1,5 week sprint side project, in which we do not want to put too much effort. Hence, we decided that we will keep the current implementation for now.
+The Gnosis team is aware of this arbitrage opportunity. We decided to not increase the complexity of the contract with regards to calculating the shares of each contribution because we believe that the presented strategy still exposes the arbitrator to major volatility risk.
+In the described strategy the arbitrator would still be exposed to market price fluctuations for the remainder of the pooling period (at least the last auction).
+Assuming there is only one auction remaining, they can not influence its closing price unless they are willing to spend money on market manipulation (they could prevent the price from falling under the fair market price, which would benefit all participants).
+Note, that all proceedings from attempted market manipulation by the buying party are shared amongst all participants in the pool. Therefore, even if the arbitrator controls a very large stake in the pool, the money they invest on the buying side would not be fully recovered.
 
 ### 3. Unnecessary storage variable initialization
 
