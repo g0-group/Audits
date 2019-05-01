@@ -41,11 +41,13 @@ In protocol specification (https://github.com/AdExNetwork/adex-protocol#layer-2)
 
 *category: unrecognised implicit risk*
 
-Since transactions are validated by at least 2/3 portion of the validators, the lowest threshold for knowing participation in a double spend attack (signing two mutually exclusive transactions) is 1/3. This threshold can be calculated as: `2q - 1` where `q` is the transaction validation quorum, or more precisely expressed as absolute number of validators: `2 * ceil(q * t) - t` where `t` is the total number of validators. So at 2 validators the double spending threshold is 2, at 3 it's 1 and at 4 it's 2 and so on.
+Since transactions are validated by at least 2/3 portion of the validators, the lowest threshold for knowing participation in a double spend attack (signing two mutually exclusive transactions) is 1/3. This threshold can be calculated as: `2q - 1` where `q` is the transaction validation quorum, or more precisely expressed as absolute number of validators: `2 * ceil(q * t) - t` where `t` is the total number of validators. So at 2 validators the double spending threshold is 2, at 3 it's 1 and, at 4 it's 2 and so on.
 
 Without the full context of additional validator staking/slashing and reputation systems, it's impossible to evaluate how problematic this property of the system is. But we feel this risk is not fully appreciated in the current documantation, which is reflected in statements like:
 
-"Publishers have a constant guarantee that they can withdraw their latest earnings on-chain;" (https://github.com/AdExNetwork/adex-protocol#flow)
+> Publishers have a constant guarantee that they can withdraw their latest earnings on-chain;
+
+(https://github.com/AdExNetwork/adex-protocol#flow)
 
 which are not strictly true.
 
