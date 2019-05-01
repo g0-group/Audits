@@ -35,7 +35,7 @@ So users of the protocol have to trust operators to only produce mutually compat
 
 *category: unimplemented assumption*
 
-In protocol specification (https://github.com/AdExNetwork/adex-protocol#layer-2) it is declared that all states have to be authored by "lead validator" which is technically defined as address in the `validators` array of the `ChannelLibrary.Channel` atruct with index `0`. This requirement however isn't enforced in the state validation process implemented in the `AdExCore.channelWithdraw` function.
+In protocol specification (https://github.com/AdExNetwork/adex-protocol/tree/4e5794bc837f69ee1741ff8c1ec5112edecf5197#layer-2) it is declared that all states have to be authored by "lead validator" which is technically defined as address in the `validators` array of the `ChannelLibrary.Channel` atruct with index `0`. This requirement however isn't enforced in the state validation process implemented in the `AdExCore.channelWithdraw` function.
 
 ### 2. In the worst case only 1/3 of the validators have to maliciously collude to perform double spending attack against payment channel benefactors
 
@@ -47,7 +47,7 @@ Without the full context of additional validator staking/slashing and reputation
 
 > Publishers have a constant guarantee that they can withdraw their latest earnings on-chain;
 
-(https://github.com/AdExNetwork/adex-protocol#flow)
+(https://github.com/AdExNetwork/adex-protocol/tree/4e5794bc837f69ee1741ff8c1ec5112edecf5197#flow)
 
 which are not strictly true.
 
