@@ -17,7 +17,7 @@ To clarify security properties of AdEx OUTPACE protocol, we'll look at L2 soluti
 
 In general blockchains provide two services, the first one is cryptoeconomic assurance of transaction ordering and the second is assurance of data integrity. 
 
-Transaction ordering is crucial for protocols that allow for mutually exclusive state transistions. The most basic example illustrating why this is important is the double spending attack. If owner of a property generates two transactions transfering it to two different owners, without transaction ordering, it's impossible to say which of the two transactions is valid and who is the new owner. 
+Transaction ordering is crucial for protocols that allow for mutually exclusive state transistions. The most basic example illustrating why is the double spending attack. If owner of a property generates two transactions transfering it to two different owners, without transaction ordering, it's impossible to say which of the two transactions is valid and who is the new owner. 
 
 Data integrity ensures that all transactions included in the ledger are mutually compatible, it allows users to check only the last transfer of ownership and trust that it is preceeded by a coherent chain of title. 
 
