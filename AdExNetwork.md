@@ -13,10 +13,14 @@ All solidity files included in the repository
 
 ### Introduction and general assesment
 
-To clarify security properties of AdEx OUTPACE protocol, let's contrast it with other more established off-chain scaling solutions. In general blockchains provide two services, the first one is transaction ordering and the second is data integrity. 
+To clarify security properties of AdEx OUTPACE protocol, we'll look at L2 solutions in general and contrast some specific ones with OUTPACE.
+
+In general blockchains provide two services, the first one is cryptoeconomic assurance of transaction ordering and the second is assurance of data integrity. 
+
 Transaction ordering is crucial for protocols that allow for mutually exclusive state transistions, the most basic example is double spending attack where owner of a property generates two transactions transfering it to two different owners. Without transaction ordering, it's impossible to say which of the two transactions is valid and who is the new owner. 
 
 Data integrity ensures that all transactions included in the ledger are mutually compatible, it allows users to check only the last transfer of ownership and trust that it is preceeded by a coherent chain of title. 
+
 For blockchains to provide these two services they have to record order and content of all transactions, in general layer 2 scaling solutions provide savings by removing either one or both of these requirements.
 
 Payment channels remove the transaction ordering requirement by defining a linear state transition protocol instead of a branching one. Reducing possible recipients of all transactions to one subject allows all possible state transition to be mutually compatible. If I determine recipient of all my transfers ahead of time, it doesn't matter in which order they will be executed, the result will always be the same. I also don't have to worry about data integrity, because all valid messages are always compatible with all other valid messages. This means that I can do all of my transactions offchain, consider them to be always valid (instantly final) and only commit the result on chain in the end.
