@@ -11,7 +11,7 @@ All solidity files included in the repository
 
 ### AdEx Core
 
-### 1. Rule that each state update has to be authored by validator[0] not enforced in contracts
+### 1. Rule that each state update has to be authored by `validator[0]` not enforced in contracts
 
 In protocol specification (https://github.com/AdExNetwork/adex-protocol/tree/4e5794bc837f69ee1741ff8c1ec5112edecf5197#layer-2) it is declared that all states have to be authored by "lead validator" which is technically defined as address in the `validators` array of the `ChannelLibrary.Channel` atruct with index `0`. This requirement however isn't enforced in the state validation process implemented in the `AdExCore.channelWithdraw` function.
 
