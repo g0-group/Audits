@@ -19,19 +19,19 @@ In protocol specification (https://github.com/AdExNetwork/adex-protocol/tree/4e5
 
 Safety fault tolerance (consensus won't break if):
 
-	`number of faulty validators <= 2 * ceil(2/3 * n) - n`
+	number of faulty validators <= 2 * ceil(2/3 * n) - n
 
-	`or`
+	or
 
-	`number of faulty lead validators == 0`
+	number of faulty lead validators == 0
 
 Liveness fault tolerance (consensus won't stall if):
 
-	`number of faulty validators < n - ceil(2/3 * n)`
+	number of faulty validators < n - ceil(2/3 * n)
 
-	`and`
+	and
 
-	`number of faulty lead validators == 0`
+	number of faulty lead validators == 0
 
 where `n` is the total number of validators
 
