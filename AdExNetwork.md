@@ -41,6 +41,8 @@ From the above, we can see that threshold for double spending is in the worst ca
 
 (https://github.com/AdExNetwork/adex-protocol/tree/4e5794bc837f69ee1741ff8c1ec5112edecf5197#flow)
 
+This is not necessarily an issue to be fixed, rather a clarification of security assumptions.
+
 ### 3. Unnecessary restriction on who can call `channelWithdrawExpired` and `channelWithdraw` functions
 
 since executing `channelWithdrawExpired` and `channelWithdraw` functions is always to the benefit of the recipient, the restriction that they can be only called by the recipient doesn't seem necessary. Making them callable by anyone on anybody else's behalf would also allow `Identity` contract to be simplified.
