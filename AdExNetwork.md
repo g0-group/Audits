@@ -54,13 +54,7 @@ since executing `channelWithdrawExpired` and `channelWithdraw` functions is alwa
 
 ### response
 
-That's a very good point
-
-When we were designing the Core, the Identity/relayer didn't exist, so it was between one additional input argument (the beneficiery) vs using msg.sender
-
-we opted for msg.sender
-
-later on we came up with Identity/relayer which would've been helped by allowing anyone to call withdraw/withdrawExpired, but too many things already depend on the current fn signatures, so changing it is not worth it
+That's a very good point. When we were designing the Core, the Identity/relayer didn't exist, so it was between one additional input argument (the beneficiery) vs using `msg.sender`. We opted for `msg.sender`. Later on we came up with Identity/relayer which would've been helped by allowing anyone to call withdraw/`withdrawExpired`, but too many things already depend on the current fn signatures, so changing it is not worth it
 
 ### AdEx Identity
 
@@ -82,8 +76,4 @@ Since anybody with the `Transaction` authorisation has a complete control over t
 
 ### response
 
-the right thing to do is probably to re-work the system using bitmaps, to allow for fine-grained control of privileges
-
-the reason is, we don't want Transactions to also imply WithdrawTo, but your argument that WithdrawTo should not imply Transactions is really solid
-
-in general, having each privilege level imply all the lower ones too is suboptimal
+The right thing to do is probably to re-work the system using bitmaps, to allow for fine-grained control of privileges. The reason [we have put `WithdrawTo` privilege level above `Transactions`] is, we don't want `Transactions` to also imply `WithdrawTo`, but your argument that `WithdrawTo` should not imply Transactions is really solid. In general, having each privilege level imply all the lower ones too is suboptimal.
