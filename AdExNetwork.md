@@ -15,6 +15,10 @@ All solidity files included in the repository
 
 In protocol specification (https://github.com/AdExNetwork/adex-protocol/tree/4e5794bc837f69ee1741ff8c1ec5112edecf5197#layer-2) it is declared that all states have to be authored by "lead validator" which is technically defined as address in the `validators` array of the `ChannelLibrary.Channel` atruct with index `0`. This requirement however isn't enforced in the state validation process implemented in the `AdExCore.channelWithdraw` function.
 
+### response
+
+we acknowledge that this would be a clear improvement to safety, and we will implement it in a subsequent version: https://github.com/AdExNetwork/adex-protocol-eth/issues/68
+
 ### 2. Failure modes of the validator consensus protocol
 
 Safety fault tolerance (consensus won't break if):
@@ -62,13 +66,25 @@ That's a very good point. When we were designing the Core, the Identity/relayer 
 
 Ability to open and finance OUTPACE channels on behalf of the `Identity` owners allows the routine relayer to perform powerful DoS attacks and in collusion with at least one whitelisted validator even steal funds. This is a significant risk, especially if routine relayers are intended to be provided centrally.
 
+### response
+
+Currently, all identities are deployed without setting a `registryAddr`, which means that a `channelOpen` routine op isn't possible; furthermore, the docs will be updated to reflect this added risk and we will consider removing it altogether if it isn't used.
+
 ### 5. Same validator can be added by the relayer multiple times, reducing validator/relayer collusion treshold
 
 At first look, routine relayer needs to collude with two whitelisted validators to be able to steal tokens from the `Identity` contract, the fact he can add the same validator multiple times however lowers this threshold to 1.
 
+### response
+
+See response to #4
+
 ### 6. Minor griefing opportunities in IdentityFactory
 
 Anybody can frontrun owner generated call of `deployAndFund` by either calling `deploy` or `deployAndExecute` making the owner's transaction fail. This forces the factory owner to fund the Identity contract in a different way, forcing additional transaction costs.
+
+### response
+
+Acknowledged; we will consider ways of fixing this, tracked in: https://github.com/AdExNetwork/adex-protocol-eth/issues/70
 
 ### 7. `WitdrawTo` authorisation should probably rank below `Transactions` authorisation
 
