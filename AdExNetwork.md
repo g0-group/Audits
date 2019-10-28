@@ -93,3 +93,7 @@ Since anybody with the `Transaction` authorisation has a complete control over t
 ### response
 
 The right thing to do is probably to re-work the system using bitmaps, to allow for fine-grained control of privileges. The reason [we have put `WithdrawTo` privilege level above `Transactions`] is, we don't want `Transactions` to also imply `WithdrawTo`, but your argument that `WithdrawTo` should not imply Transactions is really solid. In general, having each privilege level imply all the lower ones too is suboptimal.
+
+## Conclusion
+
+We haven't discovered any critical issues during the audit. Solutions implemented and proposed by the developers address our findings sufficiently.
